@@ -1,0 +1,96 @@
+.my-courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--base-variant);
+ 
+}
+.my-courses2 {
+  padding: 1rem;
+  background-color: var(--base-variant);
+  height: 100vh;
+}
+
+.course-card {
+  background-color: var(--base-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+}
+
+.course-card__image {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.course-card__body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card__title {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.course-card__desc {
+  margin: 0.5rem 0 1rem;
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+
+  /* clamp overflow to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /* always reserve 3 lines of space */
+  min-height: calc(0.95rem * 1.4 * 3);
+}
+
+
+.course-card__info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  gap: 1rem;
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+}
+
+.course-card__info li {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.course-card__btn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-blue);
+  color: var(--secondary-blue);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.course-card__btn:hover {
+  background-color: var(--secondary-blue);
+  color: var(--base-color);
+}

@@ -1,0 +1,18 @@
+ 
+ .tutorial-btn{
+ align-self: flex-start !important;
+  padding: 0.5rem 1rem !important;
+  background-color: var(--primary-blue) !important;
+  color: var(--secondary-blue) !important;
+  border: none;
+  border-radius: 4px ;
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+  width: 100%;
+}
+
+.tutorial-btn:hover {
+  background-color: var(--secondary-blue) !important;
+  color: var(--base-color) !important;
+}

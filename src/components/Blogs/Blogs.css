@@ -1,0 +1,100 @@
+/* Blogs.css */
+
+/* Section background or padding can be adjusted here */
+.blogs-section {
+  background-color: var(--base-color2); 
+}
+
+/* Card styling */
+.blog-card {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--base-color) !important;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image wrapper to fix height and object-fit */
+.blog-image-wrapper {
+  width: 100%;
+  height: 160px; /* adjust as needed */
+  overflow: hidden;
+}
+
+.blog-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card body padding */
+.blog-card .card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title styling */
+.blog-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  /* Ensure long titles wrap nicely */
+}
+
+/* Excerpt: clamp to 3 lines */
+.blog-card .excerpt {
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+ 
+ .btn-readmore{
+ align-self: flex-start !important;
+  padding: 0.5rem 1rem !important;
+  background-color: var(--primary-blue) !important;
+  color: var(--secondary-blue) !important;
+  border: none;
+  border-radius: 4px ;
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+  width: 100%;
+}
+
+.btn-readmore:hover {
+  background-color: var(--secondary-blue) !important;
+  color: var(--base-color) !important;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .blog-image-wrapper {
+    height: 140px;
+  }
+  .blog-card .card-title {
+    font-size: 0.95rem;
+  }
+  .blog-card .excerpt {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* On large screens, maybe increase image height */
+  .blog-image-wrapper {
+    height: 180px;
+  }
+}

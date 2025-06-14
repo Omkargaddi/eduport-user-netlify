@@ -1,0 +1,22 @@
+
+#footer{
+    background-color:var(--navbar-secondary);
+    width: 100%;
+}
+#footer div{
+    color:var(--text-color);
+}
+#footer a{
+    color:var(--text-color);
+}
+.footer-list a{
+    text-decoration: none;
+}
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+#footerlogo{
+    width: 43px;
+}

@@ -1,0 +1,134 @@
+/* BlogCard.css */
+
+/* Container/card adjustments */
+.blog-detail-card {
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  background-color: var(--base-color2) !important;
+}
+
+
+/* Banner image */
+.blog-card-img {
+  object-fit: cover;
+  height: 250px;
+}
+@media (max-width: 576px) {
+  .blog-card-img {
+    height: 180px;
+  }
+}
+
+/* Title */
+.blog-card-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 576px) {
+  .blog-card-title {
+    font-size: 1.5rem;
+  }
+}
+/* Meta */
+.blog-card-meta {
+  font-size: 18px;
+}
+
+/* Content from TinyMCE */
+.blog-card-content {
+  line-height: 1.6;
+}
+
+.blog-card-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-card-content h1,
+.blog-card-content h2,
+.blog-card-content h3,
+.blog-card-content h4,
+.blog-card-content h5,
+.blog-card-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  /* Optionally: font-weight */
+}
+
+.blog-card-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.blog-card-content ul,
+.blog-card-content ol {
+  padding-left: 1.25rem; /* indent */
+  margin-bottom: 1rem;
+}
+
+.blog-card-content a {
+  color: #0d6efd; /* bootstrap primary */
+}
+.blog-card-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-card-content blockquote {
+  border-left: 4px solid #6c757d; /* or a custom color */
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.blog-card-content pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.blog-card-content code {
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Tables inside content */
+.blog-card-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.blog-card-content th,
+.blog-card-content td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem;
+}
+.blog-card-content thead {
+  background-color: #e9ecef;
+}
+
+/* Any other custom styling depending on your TinyMCE setup */
+
+
+
+.blog-card-content p, li, ul{
+  color: var(--text-color) !important;
+}
+.blog-card-content h1,h2,h3,h4,h5,h6 {
+   color: var(--text-color) !important;
+}
+
+.blog-card-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;         /* optional: remove inline-layout quirks */
+  margin: 1rem auto;      /* optional: center with vertical spacing */
+}
+

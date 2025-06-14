@@ -1,0 +1,213 @@
+.course-details {
+  background: linear-gradient(120deg, #1f2937 0%, #111827 100%);
+  border-radius: 0.5rem;
+}
+
+.course-details .btn-warning {
+  background-color: #facc15;
+  border-color: #facc15;
+  color: #1f2937;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.course-details .btn-warning:hover {
+  background-color: #eab308;
+  border-color: #eab308;
+}
+
+
+
+/* card backgrounds */
+.learn-card,
+.sidebar-card {
+  background: var(--base-color) !important;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* learn list items */
+.learn-card li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* price styling */
+.sidebar-card .price {
+  font-size: 1.6rem;
+}
+
+/* Buy Now button */
+.card-body .btn-primary {
+  background-color: #465FFF;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hover: swap to white background, orange text/border */
+.card-body .btn-primary:hover {
+  background-color: #3641F5;
+}
+
+
+
+/* Share button */
+.btn-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
+
+/* ensure the image top corners match the card */
+.sidebar-card .card-img-top {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+/* small responsive tweaks */
+@media (max-width: 767px) {
+  .learn-card ul {
+    padding-left: 1rem;
+  }
+}
+
+
+
+
+
+
+
+.content-card {
+  border: none;
+  background-color: #fff;
+}
+
+.accordion-button {
+  background-color: #f9f9f9;
+}
+
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-body {
+  background-color: #fcfcfc;
+}
+
+
+
+.requirements-desc-wrapper {
+  /* ensure cards span full width of their container */
+  width: 100%;
+}
+
+/* shared card styling */
+.rd-card {
+  background: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Requirements list */
+.requirements-list {
+  padding-left: 1.25rem;
+}
+
+.requirements-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Heading consistency */
+.rd-card h4 {
+  font-size: 1.25rem;
+}
+
+/* Paragraph styling */
+.rd-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+.cert-sec {
+  background-color: var(--base-color);
+}
+
+/* Main heading */
+.cert-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Ribbon icon */
+.cert-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #3b3b98;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Bullet list */
+.cert-list h5 {
+  font-size: 1.125rem;
+  color: var(--text-color);
+}
+.cert-list p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--secondary-text);
+}
+
+/* Enroll button */
+.btn-enroll {
+  background-color: #ff7c00 !important;
+  color:white !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color .3s, transform .2s;
+}
+.btn-enroll:hover {
+  background-color: #e66f00 !important;
+  transform: translateY(-2px);
+}
+
+/* Certificate image area */
+.cert-image-wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cert-image-wrapper small {
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+.apna-logo {
+  height: 2rem;
+}
+
+/* Certificate screenshot */
+.certificate-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+

@@ -1,0 +1,106 @@
+/* Notes.css */
+
+/* Card styling */
+.notes-card {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--base-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon wrapper */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+}
+
+.notes-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Title */
+.notes-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Subtext / description */
+.notes-card .card-text {
+  font-size: 0.9rem;
+  color: var(--secondary-text) !important;
+}
+
+.notes-btn {
+  align-self: flex-start !important;
+  padding: 0.5rem 1rem !important;
+  background-color: var(--primary-blue) !important;
+  color: var(--secondary-blue) !important;
+  border: none;
+  border-radius: 4px ;
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+  width: 100%;
+}
+
+.notes-btn:hover {
+  background-color: var(--secondary-blue) !important;
+  color: var(--base-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  .notes-card .card-title {
+    font-size: 1rem;
+  }
+  .notes-card .card-text {
+    font-size: 0.85rem;
+  }
+  .notes-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    max-width: 140px;
+  }
+}
+
+@media (min-width: 992px) {
+  .icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Container section titles */
+.container h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Optional: underline under section title */
+.container h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #00246b;
+  margin: 0.5rem auto 0;
+}
+
+/* Section background/padding can be adjusted in parent if needed */
+/* For example, in the component we used container py-5 for spacing */

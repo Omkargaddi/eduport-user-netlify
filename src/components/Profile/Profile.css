@@ -1,0 +1,26 @@
+.profile-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.social-icon{
+  color:var(--text-color);
+  font-size: 26px;
+}
+.social-icon:hover {
+  color: #696c71; /* Bootstrap primary color or any color you want */
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-icon {
+    font-size: 20px !important;
+  }
+}
+

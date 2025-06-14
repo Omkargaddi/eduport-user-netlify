@@ -1,0 +1,124 @@
+/* Sidebar Styles */
+:root {
+  /* Sidebar variables */
+  --sidebar-bg: var(--base-color2);
+  --sidebar-item-active-bg: #e3e3e3;
+  --sidebar-item-active-color: #000;
+  --sidebar-item-hover-bg: #f7f7f7;
+  --sidebar-body-bg: #fff;
+}
+
+/* Sidebar Container */
+.sidebar {
+  position: sticky;
+  top: 65px;
+  height: 100vh;
+  max-width: 300px;
+  padding: 1rem;
+  background: var(--sidebar-bg);
+  overflow-y: auto;
+}
+
+/* Base item styles */
+.sidebar__item {
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  transition: background 0.2s;
+}
+.sidebar__item:hover {
+  background: var(--sidebar-item-hover-bg) ;
+}
+.sidebar__item.active,
+.sidebar__item:active {
+  background: var(--sidebar-item-active-bg) ;
+  color: var(--sidebar-item-active-color) ;
+  font-weight: 500;
+}
+
+/* Nested pages indentation */
+.sidebar__item--nested {
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Accordion Overrides */
+.sidebar__accordion .accordion-item {
+  border: none;
+  background: transparent;
+}
+.sidebar__header {
+  background: var(--sidebar-bg);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+.sidebar__header:hover {
+  background: var(--sidebar-item-hover-bg);
+}
+.sidebar__header::after {
+  filter: brightness(0.6);
+}
+.sidebar__body {
+  background: var(--sidebar-body-bg);
+  padding: 0.5rem 0;
+}
+
+/* Tutorials content color override */
+.tutorial-page-content {
+  color: var(--text-color) !important;
+}
+.tutorial-page-content h1,
+.tutorial-page-content h2,
+.tutorial-page-content h3,
+.tutorial-page-content h4,
+.tutorial-page-content h5,
+.tutorial-page-content h6 {
+  color: var(--text-color) !important;
+}
+.tutorial-page-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Offcanvas Mobile Styles */
+.offcanvas-mobile {
+  width: 280px;
+}
+.offcanvas-mobile__header {
+  background: var(--sidebar-bg);
+  border-bottom: 1px solid var(--secondary-text);
+  padding: 1rem;
+}
+.offcanvas-mobile__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.offcanvas-mobile__body {
+  background: var(--sidebar-bg);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Scrollbar styling for consistency */
+
+.tutorial-page-content p, li, ul, div{
+  color: var(--text-color) !important;
+}
+.tutorial-page-content h1,h2,h3,h4,h5,h6 {
+   color: var(--text-color) !important;
+}
+
+.tutorial-page-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;         /* optional: remove inline-layout quirks */
+  margin: 1rem auto;      /* optional: center with vertical spacing */
+}

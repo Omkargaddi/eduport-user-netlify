@@ -1,0 +1,23 @@
+input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(106, 90, 249, 0.25);
+  border-color: #6a5af9;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.form-label {
+  font-size: 0.9rem;
+}
+
+.login-header{
+  color: black !important;
+}
+.login-form-label{
+  color: rgb(43, 42, 42) !important;
+}
+.login-p{
+   color: rgb(43, 42, 42) !important;
+}

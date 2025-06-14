@@ -1,0 +1,68 @@
+/* ProfileEditModal.css */
+
+/* Increase border-radius of the modal-content to match screenshot */
+.modal-content {
+  border-radius: 1rem;
+}
+
+/* Scrollable modal body if content is tall:
+   We'll constrain modal-body to a max-height (e.g., 70vh) and allow vertical scroll. */
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Style for profile image preview */
+.profile-image-wrapper {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+}
+
+.profile-edit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Backdrop blur & semi-transparent overlay */
+/* Bootstrap 5 inserts .modal-backdrop in body when modal shown.
+   We override to add blur. */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent dark */
+  backdrop-filter: blur(4px);
+}
+
+/* Ensure backdrop z-index is just below modal (Bootstrap default is 1040 for backdrop, 1050 for modal).
+   Since we set modal z-index:100, we ensure backdrop is slightly below. But if using default Bootstrap,
+   you may leave defaults: here we only styled blur. */
+
+/* If you want to override z-index globally instead of inline style:
+.modal {
+  z-index: 100 !important;
+}
+*/
+
+/* Optional: style the header subtitle (we already used text-muted) */
+/* Optional: style scrollbar inside modal-body (browser default scrollbar is fine, but you can add) */
+/* Example for WebKit */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Responsive tweaks: ensure modal-dialog has some margin on small screens */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+.modal-backdrop {
+  z-index: 1000;
+}

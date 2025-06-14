@@ -1,0 +1,226 @@
+
+:root{
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #464a5a;
+  --primary-blue: #cadcfc;
+  --secondary-blue: #00246b;
+  --testi-box:#e5eaf4;
+  --navbar-primary:#00246b;
+  --navbar-secondary:#cadcfc;
+  --bg1:hwb(211 29% 14% / 0.432);
+  --bg2:#ffffffa6;
+  --bg3:hwb(198 66% 14% / 0.447);
+  --bg4:#115d5d8f;
+  --base-color2:#f9f9f9;
+  --base-btn:rgb(11, 10, 10);
+  --sidebar-item-hover: #f7f7f7; 
+}
+.darkmode{
+  --base-color: #070b1d;
+  --base-variant: #1b213a;
+  --text-color: #ffffff;
+  --secondary-text: #cad0eb;
+  --primary-blue: #00246b;
+  --secondary-blue: #1e64dc;
+  --testi-box:#151a25;
+  --navbar-primary:#00203d;
+  --navbar-secondary:#537aaa;
+   --bg1:hwb(211 4% 45% / 0.432);
+  --bg2:#272323a6;
+  --bg3:hwb(192 22% 76% / 0.447);
+  --bg4:#1056568f;
+  --base-color2:#0a102e;
+  --base-btn:rgb(250, 236, 236);
+  --sidebar-item-hover: #2b4778; 
+}
+
+
+.loading-text {
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+
+	        background-clip: text;
+	color: transparent;
+	animation: shimmer 4s linear infinite
+}
+
+@keyframes shimmer { to { background-position: 100% } }
+
+.home-hero {
+  min-height: 100vh;
+            background: 
+  linear-gradient(to bottom, var(--bg1), var(--bg2)),
+  linear-gradient(to right, var(--bg3), var(--bg4)),
+  url('https://eduport-wda-project.s3.eu-north-1.amazonaws.com/bg.webp') no-repeat center center;
+
+  background-size: cover;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.typewriter {
+  font-weight: 600;
+}
+.cursor {
+  animation: blink 0.8s infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
+.practice-section .section-title {
+  color: #00246b;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.practice-section .section-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.practice-card {
+  background-color: var(--base-variant);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.practice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.1);
+}
+
+
+
+
+.info-box {
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+}
+
+
+
+
+
+.stats-section {
+  background: #f9f9f9;
+}
+
+.stats-section img {
+  transition: transform 0.3s ease;
+}
+
+.stats-section img:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* Testimonials */
+.testimonials-section {
+  background-color: var(--base-color);
+}
+
+.testimonial-card {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  background-color: var(--testi-box);
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+.quote-icon {
+  font-size: 2rem;
+  color: #4682FF;
+  font-family: serif;
+}
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--secondary-text);
+}
+
+/* Call-to-Action */
+.cta-section {
+  background: linear-gradient(rgba(0, 36, 107, 0.6), rgba(0, 36, 107, 0.6)),
+              url('https://eduport-wda-project.s3.eu-north-1.amazonaws.com/bg.webp')
+                no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+.cta-section h3 {
+  color: white !important;
+}
+.cta-section p {
+  font-size: 1.1rem;
+}
+
+.cta-section .btn-primary {
+  background-color: #FF7A21;
+  border: none;
+}
+.cta-section .btn-primary:hover {
+  background-color: #e6691c;
+}
+
+
+
+
+
+
+
+
+
+.offerings-section {
+  background-color: #f8f9fa; /* light gray background */
+}
+
+.section-title {
+  color: #00246b;      /* Eduport dark-blue */
+  font-weight: 600;
+  text-align: center;
+}
+
+.offering-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offering-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.1);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #4682FF, #32DED4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.offering-card h5 {
+  color: #00246b;
+}
+
+.offering-card p {
+  font-size: 0.95rem;
+}

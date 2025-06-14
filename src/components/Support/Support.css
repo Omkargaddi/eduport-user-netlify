@@ -1,0 +1,98 @@
+/* FaqAccordion.css */
+:root {
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #464a5a;
+  /* …other vars… */
+}
+
+.darkmode {
+  --base-color: #070b1d;
+  --base-variant: #1b213a;
+  --text-color: #ffffff;
+  --secondary-text: #cad0eb;
+  /* …other vars… */
+}
+
+/* Additional spacing/layout tweaks */
+.faq-wrapper {
+  padding: 2rem;
+}
+
+.faq-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-subtitle {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.faq-accordion .faq-card + .faq-card {
+  margin-top: 0.5rem;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+
+
+/* FAQ Accordion Styles */
+.faq-accordion {
+  --bs-accordion-bg: var(--base-variant);
+  --bs-accordion-border-color: transparent;
+}
+
+.faq-card {
+  background-color: var(--base-variant);
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-card .accordion-button {
+  color: var(--text-color);
+  background-color: var(--base-variant);
+  padding: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Active (expanded) state */
+.faq-card .accordion-button:not(.collapsed) {
+  background-color: var(--secondary-blue);
+  color: var(--base-color);
+}
+
+/* Toggle icon color */
+.faq-card .accordion-button::after {
+  filter: invert(0.5);
+}
+
+/* Ensure icon is white when collapsed */
+.faq-card .accordion-button.collapsed::after {
+  filter: invert(1) !important;
+}
+
+.faq-answer {
+  color: var(--secondary-text);
+  padding: 1rem;
+  background-color: var(--base-color);
+  border-top: 1px solid var(--base-variant);
+}
+.container h2::after{
+  display: none;
+}

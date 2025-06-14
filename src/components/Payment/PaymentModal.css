@@ -1,0 +1,122 @@
+/* Root of this modal */
+.payment-modal .modal-content {
+  background: var(--base-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* Header */
+.payment-modal .modal-header {
+  background: var(--navbar-secondary);
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+.payment-modal .btn-close {
+  /* tint the “×” with your text color */
+  --bs-close-color: var(--text-color);
+}
+.payment-modal .pm-title {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Body */
+.payment-modal .pm-body {
+  background: var(--base-variant);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--secondary-text);
+}
+
+/* Responsive image */
+.payment-modal .pm-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Purchase section */
+.payment-modal .pm-purchase-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payment-modal .pm-price {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+/* Button base */
+.payment-modal  {
+  min-width: 120px;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  margin-top: 0.5rem;
+}
+
+/* Primary “Buy Now” */
+.payment-modal  {
+  background: none;
+  border: none;
+  color: white;
+}
+.pm-btn{
+  align-self: flex-start !important;
+  padding: 0.5rem 1rem !important;
+  background-color: var(--primary-blue) !important;
+  color: var(--secondary-blue) !important;
+  border: none;
+  border-radius: 4px ;
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+  width: 100%;
+}
+
+.pm-btn:hover {
+  background-color: var(--secondary-blue) !important;
+  color: var(--base-color) !important;
+}
+
+/* Receipt section */
+.payment-modal .pm-receipt-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payment-modal .pm-alert {
+  width: 100%;
+  background: var(--testi-box);
+  border: none;
+  color: var(--text-color);
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* Secondary “Download Receipt” */
+.payment-modal .pm-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--secondary-text);
+  color: var(--text-color);
+}
+.payment-modal .pm-btn-secondary:hover,
+.payment-modal .pm-btn-secondary:focus {
+  background: var(--sidebar-item-hover);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .payment-modal .modal-content {
+    margin: 0.5rem;
+  }
+  .payment-modal .pm-body {
+    padding: 1rem;
+  }
+}

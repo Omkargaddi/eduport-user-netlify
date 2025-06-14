@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Outfit, sans-serif;
+  scroll-behavior: smooth;
+}
+:root{
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #464a5a;
+  --primary-blue: #cadcfc;
+  --secondary-blue: #00246b;
+  --testi-box:#e5eaf4;
+  --navbar-primary:#00246b;
+  --navbar-secondary:#cadcfc;
+}
+.darkmode{
+  --base-color: #070b1d;
+  --base-variant: #1b213a;
+  --text-color: #ffffff;
+  --secondary-text: #cad0eb;
+  --primary-blue: #00246b;
+  --secondary-blue: #1e64dc;
+  --testi-box:#151a25;
+  --navbar-primary:#00203d;
+  --navbar-secondary:#537aaa;
+}
+
+.Toastify__toast-theme--light{
+  color: black !important;
+}
+
