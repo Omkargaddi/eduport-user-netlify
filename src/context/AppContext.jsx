@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { AppConstants } from "../utils/Consants";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -11,7 +10,7 @@ export const AppContextProvider = (props) => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
-  const backendUrl = AppConstants.BACKEND_URL;
+  const backendUrl = 'https://eduport-backend-production.up.railway.app/user';
  
    const getUserData = async () => {
     
