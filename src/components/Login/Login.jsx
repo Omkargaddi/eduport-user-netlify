@@ -1,5 +1,4 @@
 import "./Login.css";
-import Logo from "../../assets/Login/Designer8.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
@@ -128,7 +127,7 @@ const Login = () => {
         style={{ width: "100%", maxWidth: "400px" }}
       >
         <div className="text-center mb-4">
-          <img src={Logo} alt="Eduport Logo" width={60} className="mb-2" />
+          <img src='https://eduport-wda-project.s3.eu-north-1.amazonaws.com/designer8.png' alt="Eduport Logo" width={60} className="mb-2" />
           <h4 className="fw-bold login-header">
             {isCreateAccount ? "Create Account" : "Login to Eduport"}
           </h4>
