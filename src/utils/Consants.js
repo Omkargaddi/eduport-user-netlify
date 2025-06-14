@@ -1,3 +1,3 @@
 export const AppConstants = {
-    BACKEND_URL: 'http://localhost:8080/user',
+    BACKEND_URL: 'https://eduport-user.netlify.app/user',
 };
