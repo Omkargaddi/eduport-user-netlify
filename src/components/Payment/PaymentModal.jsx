@@ -95,77 +95,87 @@ export default function PaymentModal({ show, onHide, course, category }) {
     }
   };
 
-  const downloadPdf = () => {
-    const styles = getComputedStyle(document.documentElement);
-    const headerColor = styles.getPropertyValue('--secondary-blue').trim() || '#00246b';
-    const textColor   = styles.getPropertyValue('--text-color').trim()   || '#111528';
-    const accentColor = styles.getPropertyValue('--navbar-secondary').trim() || '#537aaa';
+ const downloadPdf = () => {
+  const styles = getComputedStyle(document.documentElement);
+  const headerColor    = styles.getPropertyValue('--secondary-blue').trim()   || '#00246b';
+  const textColor      = styles.getPropertyValue('--text-color').trim()       || '#111528';
+  const accentColor    = styles.getPropertyValue('--navbar-secondary').trim() || '#537aaa';
+  const secondaryText  = styles.getPropertyValue('--secondary-text').trim()   || '#464a5a';
 
-    const doc = new jsPDF();
+  const doc = new jsPDF();
 
-    // Colored header
-    doc.setFillColor(headerColor);
-    doc.rect(0, 0, 210, 30, 'F');
+  // 1) Colored header bar
+  doc.setFillColor(headerColor);
+  doc.rect(0, 0, 210, 30, 'F');
 
-    img.onload = () => {
+  // 2) Title in header
+  doc.setFontSize(18);
+  doc.setTextColor('#FFFFFF');
+  doc.setFont('helvetica', 'bold');
+  doc.text('Eduport Payment Receipt', 14, 20);
 
-      // Title next to logo
-      doc.setFontSize(18);
-      doc.setTextColor('#FFFFFF');
-      doc.setFont('helvetica', 'bold');
-      doc.text('Eduport Payment Receipt', 15 + width, 17);
+  // 3) Divider line
+  doc.setDrawColor(accentColor);
+  doc.setLineWidth(0.5);
+  doc.line(14, 32, 196, 32);
 
-      // Divider
-      doc.setDrawColor(accentColor);
-      doc.setLineWidth(0.5);
-      doc.line(14, 32, 196, 32);
+  // 4) Body text
+  doc.setFontSize(12);
+  doc.setTextColor(textColor);
+  doc.setFont('helvetica', 'normal');
+  const startY = 45;
+  const lh     = 8;
+  const { courseName, amount, orderId, paymentId, date } = receipt || {};
 
-      // Body text
-      doc.setFontSize(12);
-      doc.setTextColor(textColor);
-      doc.setFont('helvetica', 'normal');
-      const startY = 45;
-      const lh = 8;
-      doc.text('Course:', 14, startY);
-      doc.setFont('helvetica', 'bold');
-      doc.text(receipt.courseName, 50, startY);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Amount:', 14, startY + lh);
-      doc.setFont('helvetica', 'bold');
-      doc.text(`₹${receipt.amount}`, 50, startY + lh);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Order ID:', 14, startY + lh * 2);
-      doc.setFont('helvetica', 'bold');
-      doc.text(receipt.orderId, 50, startY + lh * 2);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Payment ID:', 14, startY + lh * 3);
-      doc.setFont('helvetica', 'bold');
-      doc.text(receipt.paymentId, 50, startY + lh * 3);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Date:', 14, startY + lh * 4);
-      doc.setFont('helvetica', 'bold');
-      doc.text(receipt.date, 50, startY + lh * 4);
+  // Course
+  doc.text('Course:', 14, startY);
+  doc.setFont('helvetica', 'bold');
+  doc.text(courseName, 50, startY);
 
-      // Footer
-      doc.setDrawColor(accentColor);
-      doc.line(14, startY + lh * 6, 196, startY + lh * 6);
-      doc.setFontSize(8);
-      doc.setFont('helvetica', 'italic');
-      doc.setTextColor(styles.getPropertyValue('--secondary-text').trim() || '#464a5a');
-      doc.text(
-        'Thank you for your purchase! If you have any questions, contact support at support@eduport.com.',
-        14,
-        startY + lh * 7,
-        { maxWidth: 180 }
-      );
+  // Amount
+  doc.setFont('helvetica', 'normal');
+  doc.text('Amount:', 14, startY + lh);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`₹${amount}`, 50, startY + lh);
 
-      // Save and redirect
-      doc.save(`receipt_${receipt.paymentId}.pdf`);
-      getUserData();
-      navigate('/mycourses');
-      onHide();
-    };
-  };
+  // Order ID
+  doc.setFont('helvetica', 'normal');
+  doc.text('Order ID:', 14, startY + 2 * lh);
+  doc.setFont('helvetica', 'bold');
+  doc.text(orderId, 50, startY + 2 * lh);
+
+  // Payment ID
+  doc.setFont('helvetica', 'normal');
+  doc.text('Payment ID:', 14, startY + 3 * lh);
+  doc.setFont('helvetica', 'bold');
+  doc.text(paymentId, 50, startY + 3 * lh);
+
+  // Date
+  doc.setFont('helvetica', 'normal');
+  doc.text('Date:', 14, startY + 4 * lh);
+  doc.setFont('helvetica', 'bold');
+  doc.text(date, 50, startY + 4 * lh);
+
+  // 5) Footer line + note
+  doc.setDrawColor(accentColor);
+  doc.line(14, startY + 6 * lh, 196, startY + 6 * lh);
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'italic');
+  doc.setTextColor(secondaryText);
+  doc.text(
+    'Thank you for your purchase! If you have any questions, contact support at support@eduport.com.',
+    14,
+    startY + 7 * lh,
+    { maxWidth: 180 }
+  );
+
+  // 6) Save and cleanup
+  doc.save(`receipt_${paymentId}.pdf`);
+  getUserData();
+  navigate('/mycourses');
+  onHide();
+};
+
 
   if (category === 'premium') {
     return (
