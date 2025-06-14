@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { backendUrl, setIsLoggedIn, getUserData } = useContext(AppContext);
+  const { backendUrl, setIsLoggedIn, getUserData, setUserData } = useContext(AppContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -95,7 +95,8 @@ const Login = () => {
 
         if (response.status === 200) {
           setIsLoggedIn(true);
-          await getUserData();
+          const data = await getUserData();
+          setUserData(data);
           navigate("/");
           toast.success("Login successful");
         } else {
@@ -127,7 +128,7 @@ const Login = () => {
         style={{ width: "100%", maxWidth: "400px" }}
       >
         <div className="text-center mb-4">
-          <img src='https://eduport-wda-project.s3.eu-north-1.amazonaws.com/designer8.png' alt="Eduport Logo" width={60} className="mb-2" />
+          <img src="https://eduport-wda-project.s3.eu-north-1.amazonaws.com/designer8.png" alt="Eduport Logo" width={60} className="mb-2" />
           <h4 className="fw-bold login-header">
             {isCreateAccount ? "Create Account" : "Login to Eduport"}
           </h4>
