@@ -107,13 +107,7 @@ export default function PaymentModal({ show, onHide, course, category }) {
     doc.setFillColor(headerColor);
     doc.rect(0, 0, 210, 30, 'F');
 
-    // Add logo in header
-    const img = new Image();
-    img.src = "https://eduport-wda-project.s3.eu-north-1.amazonaws.com/designer10.PNG";
     img.onload = () => {
-      const height = 15;
-      const width = 34;
-      doc.addImage(img, 'PNG', 10, 5, width, height);
 
       // Title next to logo
       doc.setFontSize(18);
