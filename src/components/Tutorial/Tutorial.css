@@ -127,6 +127,7 @@
 }
 .tutorial-page-content pre{
   background-color: var(--base-variant);
+  padding: 10px;
 }
 figure{
    background-color: var(--base-variant) !important;
