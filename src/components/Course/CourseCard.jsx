@@ -58,7 +58,9 @@ const CourseCard = ({ list }) => {
           <span className="d-flex gap-2 align-items-center">
             <img src="https://eduport-wda-project.s3.eu-north-1.amazonaws.com/clock.webp" alt="Duration" className="icon-sm" />
             <small className=""  style={{color:"var(--secondary-text)"}}>
-              {list.duration ? list.duration : "0"} hours
+              {list.duration ? (list.duration / 60).toFixed(1) 
+ : "0"} hours
+              
             </small>
           </span>
           <span className="d-flex gap-2 align-items-center">

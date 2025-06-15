@@ -48,11 +48,12 @@ const Tutorials = () => {
               className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
             >
               <div className="card h-100 blog-card" >
-                <div className="blog-image-wrapper">
+                <div className="blog-image-wrapper" >
                   <img
                     src={categories.imageUrl}
                     alt={categories.title}
                     className="card-img-top"
+                    style={{height:"100%", objectFit: 'cover',objectPosition: 'center',width:"100%"}}
                   />
                 </div>
                 {/* Body */}

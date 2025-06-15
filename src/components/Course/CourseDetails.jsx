@@ -4,15 +4,6 @@ import { useContext, useRef, useState } from "react";
 import PaymentModal from "../Payment/PaymentModal";
 import { AppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
-import User1 from '../../assets/courses/user-01.jpg'
-import User2 from '../../assets/courses/user-34.jpg'
-import User3 from '../../assets/courses/user-03.jpg'
-import User4 from '../../assets/courses/user-04.jpg'
-import User5 from '../../assets/courses/user-05.jpg'
-import User6 from '../../assets/courses/user-06.jpg'
-import User7 from '../../assets/courses/user-37.jpg'
-import User8 from '../../assets/courses/user-36.jpg'
-import User9 from '../../assets/courses/user-35.jpg'
 
 
 const CourseDetails = () => {
@@ -129,11 +120,22 @@ const handleBuyNow = () => {
         <p className="lead mb-4" style={{ maxWidth: "750px" }}>
           {course.description}
         </p>
-        {course.tags.map((tag) => {
-          <button className="btn btn-warning rounded-pill px-4 py-2 mb-4 me-3">
+        
+       {Array.isArray(course.tags) && course.tags.some(tag => tag.trim() !== "")
+  ? course.tags
+      .filter(tag => tag.trim() !== "")
+      .map((tag, idx) => (
+        <button
+          key={idx}
+          className="btn btn-warning rounded-pill px-4 py-2 mb-4 me-3"
+        >
           {tag}
         </button>
-        })}
+      ))
+  : <p>No tags available</p>
+}
+
+
         <div>
                 <small className=" me-2 text-white-50" style={{color:"gray", fontSize:"15px"}}>Instructor </small>
                 <img src={course.creatorProfileUrl ? course.creatorProfileUrl :"https://eduport-wda-project.s3.eu-north-1.amazonaws.com/defaultUser.webp" } alt="..." style={{width:"24px", height:"24px", borderRadius:"50%"}} />
@@ -150,34 +152,58 @@ const handleBuyNow = () => {
       <div className="container my-5" style={{backgroundColor:"var(--base-color2)"}}>
         <div className="row gy-4">
           {/* Left: What you'll learn */}
-          <div className="col-12 col-lg-8" >
-            <div className="shadow-sm p-4" style={{backgroundColor:"var(--base-color)", borderRadius:"18px"}}>
-              <h4 className="fw-bold mb-3"> </h4>
-              <h3 className="text-center fw-bold mb-5">
-                <span className="me-2" style={{color:"var(--text-color)"}}>What</span>
-                <span className="text-primary me-2">you’ll</span>
-                <span style={{color:"var(--text-color)"}}>learn</span>
-              </h3>
-              <ul className="list-unstyled  flex-grow-1">
-                {course.whatLearn.map((e, idx) => (
-                  <li style={{ fontSize: "18px", color:"var(--secondary-text)"}} key={idx}>{`✓  ${e}`}</li>
-                ))}
-              </ul>
-            </div>
+         <div className="col-12 col-lg-8">
+  <div
+    className="shadow-sm p-4"
+    style={{ backgroundColor: "var(--base-color)", borderRadius: "18px" }}
+  >
+    <h3 className="text-center fw-bold mb-5">
+      <span className="me-2" style={{ color: "var(--text-color)" }}>What</span>
+      <span className="text-primary me-2">you’ll</span>
+      <span style={{ color: "var(--text-color)" }}>learn</span>
+    </h3>
+    <ol className=" flex-grow-1">
+      {course.whatLearn.map((item, idx) => {
+        // split at the first “:”
+        const [heading, ...rest] = item.split(':');
+        const description = rest.join(':').trim();
+        return (
+          <li key={idx} style={{ fontSize: "18px", color: "var(--secondary-text)", marginBottom: "0.75rem" }}>
+            <b>{heading}:</b> {description}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+
+
 
             {/* Requirements Card */}
-            <div className="shadow-sm p-4 my-4" style={{backgroundColor:"var(--base-color)", borderRadius:"18px"}}>
-              <div className="card-body">
-                <h3 className="text-center fw-bold mb-5">
-                  <span className="text-primary">Requirements</span>
-                </h3>
-                <ul className="requirements-list mb-0 flex-grow-1">
-                  {course.requirements.map((e, idx) => (
-                    <li style={{ fontSize: "18px",color:"var(--secondary-text)" }} key={idx}>{`${e}`}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <div
+  className="shadow-sm p-4 my-4"
+  style={{ backgroundColor: "var(--base-color)", borderRadius: "18px" }}
+>
+  <div className="card-body">
+    <h3 className="text-center fw-bold mb-5">
+      <span className="text-primary">Requirements</span>
+    </h3>
+    <ol className="requirements-list mb-0 flex-grow-1">
+      {course.requirements.map((req, idx) => (
+        <li
+          key={idx}
+          style={{
+            fontSize: "18px",
+            color: "var(--secondary-text)",
+            marginBottom: "0.75rem",
+          }}
+        >
+          {req}
+        </li>
+      ))}
+    </ol>
+  </div>
+</div>
+
           </div>
 
                 <div className="col-12 col-lg-4 col-md-6">
@@ -244,7 +270,9 @@ const handleBuyNow = () => {
                       <path d="M21.801 10A10 10 0 1 1 17 3.335" />
                       <path d="m9 11 3 3L22 4" />
                     </svg>
-                    {`${course.duration} hours ( so far )`}
+                    <span>
+  {`${(course.duration / 60).toFixed(1)} hours (so far)`}
+</span>
                     </li>
                     <li className="d-flex gap-2 align-items-center  flex-grow-1" style={{color:"var(--secondary-text)"}}>
                     <svg

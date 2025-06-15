@@ -219,10 +219,32 @@ const Tutorial = () => {
             {isIntro ? (
               <>
                 {/* Introduction banner (same as before) */}
-                <div className="rounded p-5 text-center mt-4 mb-5" style={{ backgroundColor: 'var(--navbar-secondary)' }}>
-                    <h1 className="fw-bold mb-3" style={{color:"var(--text-color)"}}>{list.title}</h1>
-                    <p className="" style={{color:"var(--secondary-text)"}}>{list.description}</p>
-                </div>
+                <div
+  className="rounded p-5 text-center mt-4 mb-5"
+  style={{
+    /* fallback color, in case image fails */
+    backgroundColor: 'var(--navbar-secondary)',
+    /* overlay + image, here 0.4 is 40% black; change to 0.2 for 20%, etc. */
+    backgroundImage: `
+      linear-gradient(
+        rgba(0, 0, 0, 0.05),  /* top overlay opacity */
+        rgba(0, 0, 0, 0.45)   /* bottom overlay opacity */
+      ),
+      url(${list.imageUrl})
+    `,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+  <h1 className="fw-bold mb-3" style={{ color: "white" }}>
+    {list.title}
+  </h1>
+  <p style={{ color: "white" }}>
+    {list.description}
+  </p>
+</div>
+
                 <Card className="shadow-sm mb-5" style={{border:"none"}}>
                     <Card.Body style={{backgroundColor:"var(--base-variant)"}}>
                         <Card.Title className="mb-3" style={{color:"var(--text-color)"}}>Overview</Card.Title>
@@ -254,10 +276,26 @@ const Tutorial = () => {
             ) : (
               <>
                 {/* Page header */}
-                <div className="rounded p-4 text-center mt-4 mb-5" style={{ backgroundColor: 'var(--navbar-secondary)', color:"var(--text-color)" }}>
-                  <h2 className="fw-bold mb-3">{activePage.title}</h2>
-                  
-                </div>
+                <div
+  className="rounded p-4 text-center mt-4 mb-5"
+  style={{
+    /* flip the bg (and everything) */
+    transform: 'rotate(180deg)',
+    /* background image & sizing as before */
+    backgroundImage: `
+      url(https://eduport-wda-project.s3.eu-north-1.amazonaws.com/blue-and-orange-defocused-blurred-motion-gradient-abstract-background-vector.webp)
+    `,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+  <div style={{ transform: 'rotate(180deg)' }} >
+    <h2 className="fw-bold mb-3" id="tut-header">{activePage.title}</h2>
+  </div>
+</div>
+
+
                 {/* Page content */}
                <Card className="shadow-sm mb-5 p-2" style={{borderLeft:"1px solid var(--text-color)", backgroundColor:"var(--base-color2)"}}>
   <Card.Body >

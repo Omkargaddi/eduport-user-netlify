@@ -131,4 +131,11 @@
   display: block;         /* optional: remove inline-layout quirks */
   margin: 1rem auto;      /* optional: center with vertical spacing */
 }
+.blog-card-content code{
+  background-color: var(--base-variant);
+}
+.blog-card-content pre{
+  background-color: var(--base-variant);
+}
 
+ 

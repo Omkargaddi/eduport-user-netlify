@@ -122,3 +122,15 @@
   display: block;         /* optional: remove inline-layout quirks */
   margin: 1rem auto;      /* optional: center with vertical spacing */
 }
+.tutorial-page-content code{
+  background-color: var(--base-variant);
+}
+.tutorial-page-content pre{
+  background-color: var(--base-variant);
+}
+figure{
+   background-color: var(--base-variant) !important;
+}
+#tut-header{
+  color: white !important;
+}
