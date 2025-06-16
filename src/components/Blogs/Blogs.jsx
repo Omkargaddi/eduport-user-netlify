@@ -64,6 +64,7 @@ const [blogs, setBlogs]= useState(null);
                     className="card-img-top"
                   />
                 </div>
+                
                 {/* Body */}
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title" style={{color:"var(--text-color)"}}>{blog.title}</h5>
@@ -75,6 +76,7 @@ const [blogs, setBlogs]= useState(null);
         >
           Read More
         </button>
+        
                   
                 </div>
               </div>

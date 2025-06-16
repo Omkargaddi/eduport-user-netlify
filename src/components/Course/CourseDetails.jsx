@@ -10,12 +10,17 @@ const CourseDetails = () => {
     const [showPay, setShowPay] = useState(false);
   const location = useLocation();
   const course = location.state?.course;
-  const {  isLoggedIn } = useContext(AppContext);
+  const {  isLoggedIn, userData } = useContext(AppContext);
 const navigate = useNavigate();
 
 const handleBuyNow = () => {
   if(isLoggedIn){
-    setShowPay(true);
+    if(userData.authenticated){
+      setShowPay(true);
+    }else{
+      toast.warning("Please verify before purchasing course!")
+      navigate("/");
+    }
   }else{
     toast.warning("Please login first!")
     navigate("/login");

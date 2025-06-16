@@ -44,8 +44,9 @@ const BlogCard = () => {
         <img src={blog.creatorProfileUrl ? blog.creatorProfileUrl :"https://eduport-wda-project.s3.eu-north-1.amazonaws.com/defaultUser.webp" } alt="..." style={{width:"24px", height:"24px", borderRadius:"50%"}} />
            <small style={{fontWeight:"500", marginLeft:"4px", color:"var(--secondary-text)"}} className='fst-italic text-secondary'>{blog.creator || 'Unknown'}</small>
        </div>
-          <small className="" style={{color:"var(--secondary-text)"}}>Updated: 25th April 2025</small>
+          <small className="" style={{color:"var(--secondary-text)"}}>~ {blog.readtime} min read</small>
         </div>
+        
 
         {/* Render the TinyMCE HTML content */}
         <div
