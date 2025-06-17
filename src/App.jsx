@@ -23,6 +23,7 @@ import Contact from "./components/ContactUs/Contact.jsx";
 import About from "./components/About/About.jsx";
 import Support from "./components/Support/Support.jsx";
 import MyCourses from "./components/MyCourses/MyCourses.jsx";
+import NotFound from "./NotFound.jsx";
 
 const Layout = () => {
   return (
@@ -66,7 +67,7 @@ function App() {
            <Route path="support" element={<Support />} />
           <Route path="/tutorial/:categoryId" element={<Tutorial />} />
            <Route path="/mycourses" element={<MyCourses />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          <Route path="*" element={<NotFound/>} />
         </Route>
         {/* Routes without header and footer */}
         <Route path="login" element={<Login />} />
