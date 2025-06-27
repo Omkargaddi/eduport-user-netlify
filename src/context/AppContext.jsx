@@ -10,7 +10,7 @@ export const AppContextProvider = (props) => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
-  const backendUrl = 'https://eduport-backend-production.up.railway.app/user';
+  const backendUrl = 'http://localhost:8080/user';
  
    const getUserData = async () => {
     
